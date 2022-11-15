@@ -5,42 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchWikiEntityCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/MainPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiParserPipeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiTriplet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Jafregle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/JafregleCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/SingleWikiEntityCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameterSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameterSetParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequestFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/FreeGoogleTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/GoogleApiTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/Translator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/concept.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/instance.st" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/nrel.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/WikiDataContainerToScsConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiEntityDataCollector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiProcessorPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchWikiEntityCollector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/MainPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiParserPipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiTriplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiTriplet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/SingleWikiEntityCollector.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +100,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/home/artrayme/IdeaProjects/FuckTheRoutin/src/main/java/org/artrayme/translator",
     "nodejs_package_manager_path": "npm",
@@ -119,17 +109,34 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.artrayme.converter.scs" />
+      <recent name="org.artrayme" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/org/artrayme/translator" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainWindow">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.artrayme.Main" />
       <module name="FuckTheRoutin.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.artrayme.*" />
+          <option name="PATTERN" value="org.artrayme.pipeline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.artrayme.ui.swing.MainWindow" />
+      <module name="FuckTheRoutin.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.artrayme.ui.swing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,6 +146,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainWindow" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -169,12 +177,24 @@
       <workItem from="1668029702017" duration="2488000" />
       <workItem from="1668265951287" duration="7350000" />
       <workItem from="1668291400618" duration="3699000" />
-      <workItem from="1668364644625" duration="50843000" />
+      <workItem from="1668364644625" duration="72808000" />
     </task>
+    <task id="LOCAL-00001" summary="init: just a working prototype">
+      <created>1668526577306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668526577306</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init: just a working prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: just a working prototype" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -186,7 +206,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java</url>
-          <line>191</line>
+          <line>189</line>
           <properties>
             <option name="lambda-ordinal" value="1" />
           </properties>

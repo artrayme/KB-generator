@@ -1,35 +1,33 @@
-package org.artrayme;
+package org.artrayme.model;
 
-import java.awt.Image;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 public final class WikiEntity {
-    private final String idtf;
+    private final String wikiId;
     private final Map<String, String> labels;
-    private final Map<String, String> description;
+    private final Map<String, String> descriptions;
 
-    public WikiEntity(String idtf,
+    public WikiEntity(String wikiId,
                       Map<String, String> labels,
-                      Map<String, String> description) {
-        if (labels.isEmpty()) throw new RuntimeException("There is entity without labels -- " + idtf + ". " +
+                      Map<String, String> descriptions) {
+        if (labels.isEmpty()) throw new RuntimeException("There is entity without labels -- " + wikiId + ". " +
                 "You can add labels for this entity in Wikidata, or you can change input keywords");
         this.labels = labels;
-        this.idtf = idtf;
-        this.description = description;
+        this.wikiId = wikiId;
+        this.descriptions = descriptions;
     }
 
-    public String idtf() {
-        return idtf;
+    public String wikiId() {
+        return wikiId;
     }
 
     public Map<String, String> labels() {
         return labels;
     }
 
-    public Map<String, String> description() {
-        return description;
+    public Map<String, String> descriptions() {
+        return descriptions;
     }
 
     @Override
@@ -39,21 +37,21 @@ public final class WikiEntity {
         if (obj == null || obj.getClass() != this.getClass())
             return false;
         var that = (WikiEntity) obj;
-        return Objects.equals(this.idtf, that.idtf) &&
+        return Objects.equals(this.wikiId, that.wikiId) &&
                 Objects.equals(this.labels, that.labels) &&
-                Objects.equals(this.description, that.description);
+                Objects.equals(this.descriptions, that.descriptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idtf, labels, description);
+        return Objects.hash(wikiId, labels, descriptions);
     }
 
     @Override
     public String toString() {
         return "WikiEntity[" +
-                "idtf=" + idtf + ", " +
+                "wikiId=" + wikiId + ", " +
                 "labels=" + labels + ", " +
-                "description=" + description + ']';
+                "description=" + descriptions + ']';
     }
 }
