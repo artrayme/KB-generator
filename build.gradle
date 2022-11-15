@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.artrayme'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.wikidata.wdtk:wdtk-datamodel:0.14.1'
+    implementation 'org.wikidata.wdtk:wdtk-wikibaseapi:0.14.1'
+    implementation 'org.json:json:20220924'
+    implementation 'org.antlr:stringtemplate:4.0.2'
+}
+
+test {
+    useJUnitPlatform()
+}

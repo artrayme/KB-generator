@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchWikiEntityCollector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/MainPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiParserPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiTriplet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Jafregle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/JafregleCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/SingleWikiEntityCollector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameterSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpParameterSetParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequestFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/FreeGoogleTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/GoogleApiTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/Translator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/concept.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/instance.st" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/nrel.st" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/ItemDocumentImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/LabeledStatementDocumentImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/PropertyDocumentImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/PropertyIdValueImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/StatementDocumentImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/implementation/ValueSnakImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/interfaces/EntityDocument.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/interfaces/ItemDocument.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/interfaces/PropertyIdValue.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-datamodel/0.14.1/549b8cae26486e229666ebae79e221b0c9202400/wdtk-datamodel-0.14.1-sources.jar!/org/wikidata/wdtk/datamodel/interfaces/TermedStatementDocument.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-wikibaseapi/0.14.1/734516337d459520d30a8bc4ddfe4f8470d192ce/wdtk-wikibaseapi-0.14.1-sources.jar!/org/wikidata/wdtk/wikibaseapi/WbSearchEntitiesAction.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wikidata.wdtk/wdtk-wikibaseapi/0.14.1/734516337d459520d30a8bc4ddfe4f8470d192ce/wdtk-wikibaseapi-0.14.1-sources.jar!/org/wikidata/wdtk/wikibaseapi/WikibaseDataFetcher.java" root0="SKIP_INSPECTION" />
+    <setting file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/io/IOException.class" root0="SKIP_INSPECTION" />
+    <setting file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/Map.class" root0="SKIP_INSPECTION" />
+    <setting file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/Set.class" root0="SKIP_INSPECTION" />
+    <setting file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/stream/BaseStream.class" root0="SKIP_INSPECTION" />
+    <setting file="jrt:///usr/lib/jvm/java-17-openjdk!/java.base/java/util/stream/Stream.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Fs4ggYEvoq5ARNaHgdezH3vzhc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/artrayme/IdeaProjects/FuckTheRoutin/src/main/java/org/artrayme/translator",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/artrayme/translator" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.artrayme.Main" />
+      <module name="FuckTheRoutin.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.artrayme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="" />
+      <created>1665267573987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665267573987</updated>
+      <workItem from="1665267577340" duration="1574000" />
+      <workItem from="1665576509924" duration="1454000" />
+      <workItem from="1665597261891" duration="66000" />
+      <workItem from="1665690507817" duration="1222000" />
+      <workItem from="1665838160224" duration="1097000" />
+      <workItem from="1665870565160" duration="1200000" />
+      <workItem from="1666252077942" duration="599000" />
+      <workItem from="1666366577909" duration="1943000" />
+      <workItem from="1666629126677" duration="8169000" />
+      <workItem from="1667653974895" duration="343000" />
+      <workItem from="1667763173603" duration="5785000" />
+      <workItem from="1667817710718" duration="14288000" />
+      <workItem from="1667840344384" duration="5329000" />
+      <workItem from="1667929707487" duration="12321000" />
+      <workItem from="1667943368693" duration="8800000" />
+      <workItem from="1668029702017" duration="2488000" />
+      <workItem from="1668265951287" duration="7350000" />
+      <workItem from="1668291400618" duration="3699000" />
+      <workItem from="1668364644625" duration="50843000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/Main.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java</url>
+          <line>191</line>
+          <properties>
+            <option name="lambda-ordinal" value="1" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="instancesMap" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
