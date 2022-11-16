@@ -180,6 +180,9 @@ public class MainWindow extends JFrame {
             } catch (FileNotFoundException ignored) {
             }
         });
+
+        JOptionPane.showMessageDialog(new JFrame(), "Complete. Check sc_out folder", "Dialog",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void main(String[] args) throws IOException {
