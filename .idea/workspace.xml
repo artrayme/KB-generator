@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithRelations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +85,7 @@
     "last_opened_file_path": "/home/artrayme/IdeaProjects/FuckTheRoutin/src/main/java/org/artrayme/translator",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -160,7 +157,7 @@
       <workItem from="1668029702017" duration="2488000" />
       <workItem from="1668265951287" duration="7350000" />
       <workItem from="1668291400618" duration="3699000" />
-      <workItem from="1668364644625" duration="78024000" />
+      <workItem from="1668364644625" duration="79801000" />
     </task>
     <task id="LOCAL-00001" summary="init: just a working prototype">
       <created>1668526577306</created>
@@ -176,16 +173,76 @@
       <option name="project" value="LOCAL" />
       <updated>1668553820061</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor: move method for entity deletion to data container">
+      <created>1668588653779</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668588653779</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: implement new pipeline element">
+      <created>1668588683169</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668588683169</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add simple UI">
+      <created>1668588702704</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668588702704</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="e24047ec-13fe-43f3-8ec6-b9a897e99d63">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="e24047ec-13fe-43f3-8ec6-b9a897e99d63" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: just a working prototype" />
     <MESSAGE value="feat: completely new architecture and big refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: completely new architecture and big refactoring" />
+    <MESSAGE value="refactor: move method for entity deletion to data container" />
+    <MESSAGE value="feat: implement new pipeline element" />
+    <MESSAGE value="feat: add simple UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add simple UI" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
