@@ -5,31 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/WikiDataContainerToScsConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiEntityDataCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiProcessorPipeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithRelations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/BatchWikiEntityCollector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/MainPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiParserPipeline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/WikiTriplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiTriplet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/SingleWikiEntityCollector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +160,7 @@
       <workItem from="1668029702017" duration="2488000" />
       <workItem from="1668265951287" duration="7350000" />
       <workItem from="1668291400618" duration="3699000" />
-      <workItem from="1668364644625" duration="72808000" />
+      <workItem from="1668364644625" duration="78024000" />
     </task>
     <task id="LOCAL-00001" summary="init: just a working prototype">
       <created>1668526577306</created>
@@ -186,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668526577306</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: completely new architecture and big refactoring">
+      <created>1668553820061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668553820061</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,26 +184,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: just a working prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: just a working prototype" />
+    <MESSAGE value="feat: completely new architecture and big refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: completely new architecture and big refactoring" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/Main.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/BatchParser.java</url>
-          <line>189</line>
-          <properties>
-            <option name="lambda-ordinal" value="1" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="instancesMap" language="JAVA" />

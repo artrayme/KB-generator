@@ -29,7 +29,8 @@ public class WikiTranslateMissedData implements WikiProcessorPipeline {
     private WikiDataContainer translateAllData(WikiDataContainer container){
         for (WikiEntity entity : container.getAllData()) {
             translateWikiData(entity.labels());
-            translateWikiData(entity.descriptions());
+            if (!entity.descriptions().isEmpty())
+                translateWikiData(entity.descriptions());
         }
         return container;
     }

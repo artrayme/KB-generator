@@ -47,7 +47,7 @@ public class WikiBatchEntityCollector implements WikiProcessorPipeline {
             var pulledProperties = this.wbdf.getEntityDocuments(propertiesWhiteList.stream().toList());
             this.wbdf.getFilter().setPropertyFilter(pulledProperties.values().stream().map(e -> ((PropertyDocumentImpl) e).getEntityId()).collect(Collectors.toSet()));
         } catch (MediaWikiApiErrorException | IOException e) {
-            throw new RuntimeException("Can't find one of your properties from whitelist");
+            throw new RuntimeException("Can't find one of your properties from whitelist", e);
         }
     }
 

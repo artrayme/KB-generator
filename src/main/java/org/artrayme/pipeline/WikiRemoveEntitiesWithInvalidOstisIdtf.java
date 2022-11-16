@@ -23,26 +23,27 @@ public class WikiRemoveEntitiesWithInvalidOstisIdtf implements WikiProcessorPipe
         allMappers.putAll(data.getInstancesWikiToOstisMap());
         allMappers.putAll(data.getPropertiesWikiToOstisMap());
         var wikiIdsToDelete = allMappers.entrySet().stream()
-                        .filter((k) -> isInvalidOstisIdtf(k.getValue()))
-                        .map(Map.Entry::getKey)
-                        .collect(Collectors.toSet());
+                .filter((k) -> isInvalidOstisIdtf(k.getValue()))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
 
         //        remove corrupted wiki ids from other maps
-        data.getConceptsWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-        data.getInstancesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-        data.getPropertiesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-        data.getTriplets().removeIf(
-                e -> wikiIdsToDelete.contains(e.node1())
-                        || wikiIdsToDelete.contains(e.property())
-                        || wikiIdsToDelete.contains(e.node2())
-        );
-        data.getAllData().removeIf(e -> wikiIdsToDelete.contains(e.wikiId()));
+        data.deleteByWikiIds(wikiIdsToDelete);
+//        data.getConceptsWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+//        data.getInstancesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+//        data.getPropertiesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+//        data.getTriplets().removeIf(
+//                e -> wikiIdsToDelete.contains(e.node1())
+//                        || wikiIdsToDelete.contains(e.property())
+//                        || wikiIdsToDelete.contains(e.node2())
+//        );
+//        data.getAllData().removeIf(e -> wikiIdsToDelete.contains(e.wikiId()));
 
         return data;
     }
 
     private boolean isInvalidOstisIdtf(String idtf) {
-//        Ostis id can't include non-ASCII symbols and special symbols
+        //        Ostis id can't include non-ASCII symbols and special symbols
         return (idtf.contains(":")
                 || idtf.contains("'")
                 || idtf.contains("-")

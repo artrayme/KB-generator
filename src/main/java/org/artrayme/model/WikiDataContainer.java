@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class WikiDataContainer {
     private final List<WikiEntity> allData = new ArrayList<>();
@@ -44,5 +45,17 @@ public class WikiDataContainer {
 
     public List<WikiTriplet> getTriplets() {
         return triplets;
+    }
+
+    public void deleteByWikiIds(Set<String> wikiIds){
+        conceptsWikiToOstisMap.keySet().removeIf(wikiIds::contains);
+        instancesWikiToOstisMap.keySet().removeIf(wikiIds::contains);
+        propertiesWikiToOstisMap.keySet().removeIf(wikiIds::contains);
+        triplets.removeIf(
+                e -> wikiIds.contains(e.node1())
+                        || wikiIds.contains(e.property())
+                        || wikiIds.contains(e.node2())
+        );
+        allData.removeIf(e -> wikiIds.contains(e.wikiId()));
     }
 }
