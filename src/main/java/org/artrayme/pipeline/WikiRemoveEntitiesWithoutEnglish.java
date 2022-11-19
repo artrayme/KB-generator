@@ -24,16 +24,6 @@ public class WikiRemoveEntitiesWithoutEnglish implements WikiProcessorPipeline {
 
         //        remove corrupted wiki ids from other maps
         data.deleteByWikiIds(wikiIdsToDelete);
-        //        data.getConceptsWikiToOstisMap().keySet().removeIf(entitiesToDelete::contains);
-        //        data.getInstancesWikiToOstisMap().keySet().removeIf(entitiesToDelete::contains);
-        //        data.getPropertiesWikiToOstisMap().keySet().removeIf(entitiesToDelete::contains);
-        //        data.getTriplets().removeIf(
-        //                e -> entitiesToDelete.contains(e.node1())
-        //                        || entitiesToDelete.contains(e.property())
-        //                        || entitiesToDelete.contains(e.node2())
-        //        );
-        //        data.getAllData().removeIf(e -> entitiesToDelete.contains(e.wikiId()));
-
         return data;
     }
 }
