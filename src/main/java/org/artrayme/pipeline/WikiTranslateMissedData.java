@@ -8,6 +8,7 @@ import org.artrayme.translator.jafregle.Language;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class WikiTranslateMissedData implements WikiProcessorPipeline {
     private final Jafregle translator;
@@ -65,13 +66,12 @@ public class WikiTranslateMissedData implements WikiProcessorPipeline {
                     from,
                     to);
             text.put(to.value(), translation);
-            Thread.sleep(20);
+            Thread.sleep(ThreadLocalRandom.current().nextInt(10, 30));
         } catch (IOException | InterruptedException ex) {
             isBannedByGoogle = true;
             //                                If you have translated a lot before, Google will block your ip for "strange activity".
             //                                So skip the translation process, all data remains as before
-            //            ToDo list with exceptions o smth like this
-
+            //            ToDo list with exceptions or smth like this
         }
     }
 }
