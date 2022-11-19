@@ -14,12 +14,11 @@ After that, enter some names of your entities and enter the languages for which 
 
 # Example
 Example of generated knowledge base:
-![base example](img.png)
+![KB example](kb_example.png)
 
 # In development 
 
-1) Translation. All logic for translation already implemented, but only with Free Google Translator. And this translator ban your ip if there is a lot of requests. To solve this issue, user must provide token for Google cloud translator. Or another option -- implement client for LibreTranslate. 
-2) Mapping relations. Ostis and Wiki have different name for identical relations. And it is important to add converter wiki2ostis names
+1) Translation. All logic for translation already implemented, but only with Free Google Translator. And this translator ban your ip if there is a lot of requests. To solve this issue, user must provide token for Google cloud translator. Or another option -- implement client for LibreTranslate.
 
 # Contribution
 Any questions? Create an issue! 
