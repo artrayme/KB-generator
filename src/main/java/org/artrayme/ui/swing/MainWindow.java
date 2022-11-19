@@ -5,6 +5,7 @@ import org.artrayme.converter.scs.InstanceConverter;
 import org.artrayme.converter.scs.RelationConverter;
 import org.artrayme.pipeline.WikiBatchEntityCollector;
 import org.artrayme.pipeline.WikiClearIllegalCharacters;
+import org.artrayme.pipeline.WikiDeleteEntitiesWithoutLabels;
 import org.artrayme.pipeline.WikiEntityDataCollector;
 import org.artrayme.pipeline.WikiFillMappingInfo;
 import org.artrayme.pipeline.WikiOstisRelNameMapper;
@@ -141,9 +142,11 @@ public class MainWindow extends JFrame {
                                         new WikiRemoveEntitiesWithoutEnglish(
                                                 new WikiTranslateMissedData(
                                                         new WikiRemoveEntitiesWithRelations(
-                                                                new WikiEntityDataCollector(
-                                                                        wikiParser,
-                                                                        wikidataDataFetcher
+                                                                new WikiDeleteEntitiesWithoutLabels(
+                                                                        new WikiEntityDataCollector(
+                                                                                wikiParser,
+                                                                                wikidataDataFetcher
+                                                                        )
                                                                 ),
                                                                 Set.of("P2959")
                                                         ),
