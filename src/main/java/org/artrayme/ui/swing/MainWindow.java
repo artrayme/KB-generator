@@ -7,6 +7,7 @@ import org.artrayme.pipeline.WikiBatchEntityCollector;
 import org.artrayme.pipeline.WikiClearIllegalCharacters;
 import org.artrayme.pipeline.WikiEntityDataCollector;
 import org.artrayme.pipeline.WikiFillMappingInfo;
+import org.artrayme.pipeline.WikiOstisRelNameMapper;
 import org.artrayme.pipeline.WikiProcessorPipeline;
 import org.artrayme.pipeline.WikiRemoveEntitiesWithInvalidOstisIdtf;
 import org.artrayme.pipeline.WikiRemoveEntitiesWithRelations;
@@ -14,6 +15,7 @@ import org.artrayme.pipeline.WikiRemoveEntitiesWithoutEnglish;
 import org.artrayme.pipeline.WikiTranslateMissedData;
 import org.artrayme.translator.jafregle.Jafregle;
 import org.artrayme.translator.jafregle.translators.FreeGoogleTranslator;
+import org.json.JSONObject;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
 import javax.swing.JButton;
@@ -32,8 +34,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -49,6 +57,7 @@ public class MainWindow extends JFrame {
     private final JPanel fieldsPanel = new JPanel(new GridLayout(2, 2));
 
     public MainWindow() throws HeadlessException {
+
         Font mainFont = new Font("SansSerif", Font.BOLD, 20);
         entityNames.setFont(mainFont);
         entityNames.getText();
@@ -122,22 +131,26 @@ public class MainWindow extends JFrame {
         );
 
         var pipeline = new WikiClearIllegalCharacters(
-                new WikiRemoveEntitiesWithInvalidOstisIdtf(
-                        new WikiFillMappingInfo(
-                                new WikiRemoveEntitiesWithoutEnglish(
-                                        new WikiTranslateMissedData(
-                                                new WikiRemoveEntitiesWithRelations(
-                                                        new WikiEntityDataCollector(
-                                                                wikiParser,
-                                                                wikidataDataFetcher
+                new WikiOstisRelNameMapper(
+                        new WikiRemoveEntitiesWithInvalidOstisIdtf(
+                                new WikiFillMappingInfo(
+                                        new WikiRemoveEntitiesWithoutEnglish(
+                                                new WikiTranslateMissedData(
+                                                        new WikiRemoveEntitiesWithRelations(
+                                                                new WikiEntityDataCollector(
+                                                                        wikiParser,
+                                                                        wikidataDataFetcher
+                                                                ),
+                                                                Set.of("P2959")
                                                         ),
-                                                        Set.of("P2959")
-                                                ),
-                                                new Jafregle(new FreeGoogleTranslator()),
-                                                requiredLangs
+                                                        new Jafregle(new FreeGoogleTranslator()),
+                                                        requiredLangs
+                                                )
                                         )
                                 )
-                        )
+                        ),
+                        Map.of("P527", "nrel_basic_decomposition",
+                                "P1552", "nrel_inclusion")
                 )
         );
         var x = pipeline.execute();
@@ -186,6 +199,7 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) throws IOException {
+
         System.setProperty("awt.useSystemAAFontSettings", "on");
         System.setProperty("swing.aatext", "true");
 
