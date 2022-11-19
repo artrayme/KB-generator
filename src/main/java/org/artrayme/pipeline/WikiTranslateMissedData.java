@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class WikiTranslateMissedData implements WikiProcessorPipeline {
     private final Jafregle translator;
     private final WikiProcessorPipeline wikiProcessorPipeline;
-    private  final Set<String> requiredLangs;
+    private final Set<String> requiredLangs;
     private boolean isBannedByGoogle;
 
     public WikiTranslateMissedData(WikiProcessorPipeline wikiProcessorPipeline, Jafregle translator, Set<String> requiredLangs) {
@@ -27,7 +27,7 @@ public class WikiTranslateMissedData implements WikiProcessorPipeline {
         return translateAllData(wikiProcessorPipeline.execute());
     }
 
-    private WikiDataContainer translateAllData(WikiDataContainer container){
+    private WikiDataContainer translateAllData(WikiDataContainer container) {
         for (WikiEntity entity : container.getAllData()) {
             translateWikiData(entity.labels());
             if (!entity.descriptions().isEmpty())

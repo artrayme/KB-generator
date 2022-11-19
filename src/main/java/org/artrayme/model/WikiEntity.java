@@ -11,8 +11,9 @@ public final class WikiEntity {
     public WikiEntity(String wikiId,
                       Map<String, String> labels,
                       Map<String, String> descriptions) {
-        if (labels.isEmpty()) throw new RuntimeException("There is entity without labels -- " + wikiId + ". " +
-                "You can add labels for this entity in Wikidata, or you can change input keywords");
+        if (labels.isEmpty())
+            throw new RuntimeException("There is entity without labels -- " + wikiId + ". " +
+                    "You can add labels for this entity in Wikidata, or you can change input keywords");
         this.labels = labels;
         this.wikiId = wikiId;
         this.descriptions = descriptions;
@@ -31,6 +32,11 @@ public final class WikiEntity {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(wikiId, labels, descriptions);
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (obj == this)
             return true;
@@ -40,11 +46,6 @@ public final class WikiEntity {
         return Objects.equals(this.wikiId, that.wikiId) &&
                 Objects.equals(this.labels, that.labels) &&
                 Objects.equals(this.descriptions, that.descriptions);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(wikiId, labels, descriptions);
     }
 
     @Override

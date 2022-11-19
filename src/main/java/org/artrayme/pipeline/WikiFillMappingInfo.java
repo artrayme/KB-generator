@@ -17,12 +17,12 @@ public class WikiFillMappingInfo implements WikiProcessorPipeline {
     public WikiDataContainer execute() {
         var container = wikiProcessorPipeline.execute();
         var labelsMap = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, WikiEntity::labels));
-        container.getPropertiesWikiToOstisMap().replaceAll((k, v) -> toOstisIdtf(labelsMap.get(k).get(Language.ENGLISH.value()),"nrel_"));
+        container.getPropertiesWikiToOstisMap().replaceAll((k, v) -> toOstisIdtf(labelsMap.get(k).get(Language.ENGLISH.value()), "nrel_"));
         container.getConceptsWikiToOstisMap().replaceAll((k, v) -> {
             String concept_ = toOstisIdtf(labelsMap.get(k).get(Language.ENGLISH.value()), "concept_");
             return concept_;
         });
-        container.getInstancesWikiToOstisMap().replaceAll((k, v) -> toOstisIdtf(labelsMap.get(k).get(Language.ENGLISH.value()),""));
+        container.getInstancesWikiToOstisMap().replaceAll((k, v) -> toOstisIdtf(labelsMap.get(k).get(Language.ENGLISH.value()), ""));
         return container;
     }
 

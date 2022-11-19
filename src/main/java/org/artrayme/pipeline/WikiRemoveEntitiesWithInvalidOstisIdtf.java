@@ -29,15 +29,15 @@ public class WikiRemoveEntitiesWithInvalidOstisIdtf implements WikiProcessorPipe
 
         //        remove corrupted wiki ids from other maps
         data.deleteByWikiIds(wikiIdsToDelete);
-//        data.getConceptsWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-//        data.getInstancesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-//        data.getPropertiesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
-//        data.getTriplets().removeIf(
-//                e -> wikiIdsToDelete.contains(e.node1())
-//                        || wikiIdsToDelete.contains(e.property())
-//                        || wikiIdsToDelete.contains(e.node2())
-//        );
-//        data.getAllData().removeIf(e -> wikiIdsToDelete.contains(e.wikiId()));
+        //        data.getConceptsWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+        //        data.getInstancesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+        //        data.getPropertiesWikiToOstisMap().keySet().removeIf(wikiIdsToDelete::contains);
+        //        data.getTriplets().removeIf(
+        //                e -> wikiIdsToDelete.contains(e.node1())
+        //                        || wikiIdsToDelete.contains(e.property())
+        //                        || wikiIdsToDelete.contains(e.node2())
+        //        );
+        //        data.getAllData().removeIf(e -> wikiIdsToDelete.contains(e.wikiId()));
 
         return data;
     }

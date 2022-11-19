@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
 
 public class RelationConverter implements WikiDataContainerToScsConverter {
     private final WikiDataContainer container;
-    private ST parser;
     private final String stTemplate;
+    private ST parser;
 
     public RelationConverter(WikiDataContainer container) throws IOException {
         this.container = container;
@@ -34,7 +34,7 @@ public class RelationConverter implements WikiDataContainerToScsConverter {
     @Override
     public Map<String, String> convert() {
         Map<String, String> result = new HashMap<>();
-        var data = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, e->e));
+        var data = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, e -> e));
         container.getPropertiesWikiToOstisMap().forEach((key, value) -> {
             if (data.containsKey(key)) {
                 result.put(value, convertSingle(key, value, data));
@@ -44,7 +44,7 @@ public class RelationConverter implements WikiDataContainerToScsConverter {
         return result;
     }
 
-    private String convertSingle(String key, String value, Map<String, WikiEntity> data){
+    private String convertSingle(String key, String value, Map<String, WikiEntity> data) {
         //        I don't know how to reset state for StringTemplate
         parser = new ST(stTemplate, '$', '$');
         parser.add("idtf", value);

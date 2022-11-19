@@ -8,7 +8,7 @@ import java.net.URL;
 public class HttpRequestFactory {
 
     public HttpRequest getRequest(HttpMethod method, String url,
-                    HttpParameterSet parameters) throws IOException {
+                                  HttpParameterSet parameters) throws IOException {
         HttpRequest request;
 
         if (method == HttpMethod.GET) {
@@ -21,34 +21,34 @@ public class HttpRequestFactory {
     }
 
     private HttpRequest requestGET(String url, HttpParameterSet parameters)
-                    throws IOException {
+            throws IOException {
         StringBuilder request = new StringBuilder(url);
         String paramaters = new HttpParameterSetParser(parameters).asString();
 
         request.append(paramaters);
 
         HttpURLConnection httpConnection = getDefaultConnection(request
-                        .toString());
+                .toString());
 
         httpConnection.setRequestMethod(HttpMethod.GET.asString());
         httpConnection.setRequestProperty("Content-Length",
-                        String.valueOf(paramaters.getBytes()));
+                String.valueOf(paramaters.getBytes()));
 
         return new HttpRequest(httpConnection);
     }
 
     private HttpRequest requestPOST(String url, HttpParameterSet parameters)
-                    throws IOException {
+            throws IOException {
         String paramaters = new HttpParameterSetParser(parameters).asString();
 
         HttpURLConnection httpConnection = getDefaultConnection(url);
         httpConnection.setRequestMethod(HttpMethod.POST.asString());
         httpConnection.setRequestProperty("Content-Length",
-                        String.valueOf(paramaters.getBytes()));
+                String.valueOf(paramaters.getBytes()));
 
         httpConnection.setDoOutput(true);
         OutputStreamWriter writer = new OutputStreamWriter(
-                        httpConnection.getOutputStream());
+                httpConnection.getOutputStream());
 
         writer.write(paramaters);
         writer.flush();
@@ -57,13 +57,13 @@ public class HttpRequestFactory {
     }
 
     private HttpURLConnection getDefaultConnection(String request)
-                    throws IOException {
+            throws IOException {
         URL urlRequest = new URL(request);
         HttpURLConnection httpConnection = (HttpURLConnection) urlRequest.openConnection();
         httpConnection.addRequestProperty("User-Agent", HttpClient.USERAGENT);
         httpConnection.setRequestProperty("Accept-Charset", HttpClient.CHARSET);
         httpConnection.setRequestProperty("Content-Type",
-                        "application/x-www-form-urlencoded");
+                "application/x-www-form-urlencoded");
         httpConnection.setRequestProperty("Content-Language", "en-US");
 
         return httpConnection;

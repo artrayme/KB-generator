@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="feat: add new pipeline for mapping wiki relations to ostis relations">
-      <change afterPath="$PROJECT_DIR$/kb_example.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="doc: update information in readme">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/WikiDataContainerToScsConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/WikiDataContainerToScsConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiTriplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiTriplet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiOstisRelNameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiOstisRelNameMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithRelations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithRelations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiTranslateMissedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Jafregle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Jafregle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/JafregleCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/JafregleCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/http/HttpRequestFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/FreeGoogleTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/FreeGoogleTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/GoogleApiTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/GoogleApiTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/translator/jafregle/translators/Translator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +177,7 @@
       <workItem from="1668265951287" duration="7350000" />
       <workItem from="1668291400618" duration="3699000" />
       <workItem from="1668364644625" duration="80469000" />
-      <workItem from="1668865773533" duration="11431000" />
+      <workItem from="1668865773533" duration="11548000" />
     </task>
     <task id="LOCAL-00001" summary="init: just a working prototype">
       <created>1668526577306</created>
@@ -237,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668878898704</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="doc: update information in readme">
+      <created>1668878938308</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668878938308</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +317,8 @@
     <MESSAGE value="fix: arrows direction in templates and new mechanism for subclasses" />
     <MESSAGE value="feat: add new pipeline for mapping wiki relations to ostis relations" />
     <MESSAGE value="fix: random delay between requests to google translate" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: random delay between requests to google translate" />
+    <MESSAGE value="doc: update information in readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: update information in readme" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

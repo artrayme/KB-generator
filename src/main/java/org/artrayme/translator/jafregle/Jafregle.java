@@ -1,9 +1,9 @@
 package org.artrayme.translator.jafregle;
 
-import java.io.IOException;
-
 import org.artrayme.translator.jafregle.translators.FreeGoogleTranslator;
 import org.artrayme.translator.jafregle.translators.Translator;
+
+import java.io.IOException;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -24,149 +24,130 @@ import org.artrayme.translator.jafregle.translators.Translator;
  * @author Cristian Oliveira
  * @author www.cristianoliveira.com.br
  */
-  
 
-public class Jafregle 
-{
+
+public class Jafregle {
     private String from;
     private String to;
-    
+
     private Translator translator;
-    
+
     private JafregleCache jafregleCache;
-    
+
     /**
      * Instantiate with a given {@link Translator} to be used
      *
-     * @param  translator       ITranslator Interface
-     * 
+     * @param translator ITranslator Interface
      */
     public Jafregle(Translator translator) {
         this.translator = translator;
     }
-    
+
     /**
-     * This constructor will be deprecated cause 
-     * 
-     * @deprecated use {@link #constructor(Translator translator)} instead
-     * @param from
-     * @param to
-     */
-    @Deprecated
-    public Jafregle(String from, String to)
-    {
-        this.from = from;
-        this.to   = to;
-    }
-    
-    /**
-     * This constructor will be deprecated cause 
-     * 
-     * @deprecated use {@link #constructor(Translator translator)} instead
-     * @param from
-     * @param to
-     */
-    @Deprecated
-    public Jafregle(Language from, Language to)
-    {
-        this.from = from.value();
-        this.to   = to.value();
-    }
-    
-    
-    /**
-     *  Translate text string from language (Param "from") 
-     *  to specific language (Param "to") 
+     * This constructor will be deprecated cause
      *
+     * @param from
+     * @param to
+     * @deprecated use {@link #constructor(Translator translator)} instead
+     */
+    @Deprecated
+    public Jafregle(String from, String to) {
+        this.from = from;
+        this.to = to;
+    }
+
+    /**
+     * This constructor will be deprecated cause
+     *
+     * @param from
+     * @param to
+     * @deprecated use {@link #constructor(Translator translator)} instead
+     */
+    @Deprecated
+    public Jafregle(Language from, Language to) {
+        this.from = from.value();
+        this.to = to.value();
+    }
+
+
+    /**
+     * Translate text string from language (Param "from")
+     * to specific language (Param "to")
+     *
+     * @param textToTranslate String text to translate
+     * @return String with text translated
      * @deprecated use {@link #translate(String textToTranslate, Language from, Language to)}
      * instead
-     * @param  textToTranslate  String text to translate
-     * @return                  String with text translated
-     * 
      */
     @Deprecated
-    public String translate(String textToTranslate) throws IOException
-    {
+    public String translate(String textToTranslate) throws IOException {
         return translate(textToTranslate, from, to);
     }
-    
+
     /**
-     *  Translate text string from language (Param "from") to especific language (Param "to") 
+     * Translate text string from language (Param "from") to especific language (Param "to")
      *
-     * @param  textToTranslate  String text to translate
-     * @param  from             Enum language from text
-     * @param  to               Enum language to translate
-     * @return                  String whit text translated
-     * 
+     * @param textToTranslate String text to translate
+     * @param from            Enum language from text
+     * @param to              Enum language to translate
+     * @return String whit text translated
      */
-    public String translate(String textToTranslate, Language from, Language to) throws IOException
-    {
+    public String translate(String textToTranslate, Language from, Language to) throws IOException {
         return translate(textToTranslate, from.value(), to.value());
     }
-    
+
     /**
-     *  Translate text string from language (Param "from") to especific language (Param "to") 
+     * Translate text string from language (Param "from") to especific language (Param "to")
      *
-     * @param  textToTranslate  String text to translate
-     * @param  from             String language from text
-     * @param  to               String language to translate
-     * @return                  String with text translated
-     * 
+     * @param textToTranslate String text to translate
+     * @param from            String language from text
+     * @param to              String language to translate
+     * @return String with text translated
      */
-    public String translate(String textToTranslate, String from, String to) throws IllegalArgumentException, IOException
-    {
-        if(textToTranslate.isEmpty() || from.isEmpty() || to.isEmpty() )
-        {
-           throw new IllegalArgumentException("All params must be informed");
+    public String translate(String textToTranslate, String from, String to) throws IllegalArgumentException, IOException {
+        if (textToTranslate.isEmpty() || from.isEmpty() || to.isEmpty()) {
+            throw new IllegalArgumentException("All params must be informed");
         }
-        
+
         String result = getTranslator().requestTranslation(textToTranslate, from, to);
-           
+
         getCacheHandler().add(result);
-           
+
         return result;
     }
-    
+
+    /**
+     * Get current translator
+     *
+     * @return translator       ITranslator Interface
+     */
+    public Translator getTranslator() {
+        if (translator == null) {
+            translator = new FreeGoogleTranslator();
+        }
+
+        return translator;
+    }
+
     /**
      * Set translator to be used
      *
-     * @param  translator       ITranslator Interface
-     * 
+     * @param translator ITranslator Interface
      */
-    public void setTranslator(Translator translator)
-    {
+    public void setTranslator(Translator translator) {
         this.translator = translator;
     }
-    
-    /**
-     * Get current translator 
-     *
-     * @return  translator       ITranslator Interface
-     * 
-     */
-    public Translator getTranslator() 
-    {
-        if (translator == null) 
-        {
-            translator = new FreeGoogleTranslator();
-        }
-        
-        return translator;
-    }
-    
+
     /**
      * Get cache handler
      *
-     * @return  JafregleCache    
-     * 
+     * @return JafregleCache
      */
-    public JafregleCache getCacheHandler()
-    {
-        if(jafregleCache == null)
-        {
+    public JafregleCache getCacheHandler() {
+        if (jafregleCache == null) {
             jafregleCache = new JafregleCache();
         }
-        
+
         return jafregleCache;
     }
 }

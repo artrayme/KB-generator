@@ -47,7 +47,7 @@ public class WikiDataContainer {
         return triplets;
     }
 
-    public void deleteByWikiIds(Set<String> wikiIds){
+    public void deleteByWikiIds(Set<String> wikiIds) {
         conceptsWikiToOstisMap.keySet().removeIf(wikiIds::contains);
         instancesWikiToOstisMap.keySet().removeIf(wikiIds::contains);
         propertiesWikiToOstisMap.keySet().removeIf(wikiIds::contains);

@@ -1,9 +1,7 @@
 package org.artrayme.pipeline;
 
 import org.artrayme.model.WikiDataContainer;
-import org.artrayme.model.WikiEntity;
 import org.artrayme.model.WikiTriplet;
-import org.artrayme.translator.jafregle.Language;
 
 import java.util.Set;
 import java.util.stream.Collectors;

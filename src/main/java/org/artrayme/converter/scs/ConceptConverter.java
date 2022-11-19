@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 
 public class ConceptConverter implements WikiDataContainerToScsConverter {
     private final WikiDataContainer container;
-    private ST parser;
     private final String stTemplate;
+    private ST parser;
 
     public ConceptConverter(WikiDataContainer container) throws IOException {
         this.container = container;

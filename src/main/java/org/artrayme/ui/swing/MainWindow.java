@@ -15,7 +15,6 @@ import org.artrayme.pipeline.WikiRemoveEntitiesWithoutEnglish;
 import org.artrayme.pipeline.WikiTranslateMissedData;
 import org.artrayme.translator.jafregle.Jafregle;
 import org.artrayme.translator.jafregle.translators.FreeGoogleTranslator;
-import org.json.JSONObject;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
 import javax.swing.JButton;
@@ -24,8 +23,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -34,14 +31,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -82,6 +73,19 @@ public class MainWindow extends JFrame {
             }
         });
         this.add(mainPanel);
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        System.setProperty("awt.useSystemAAFontSettings", "on");
+        System.setProperty("swing.aatext", "true");
+
+        MainWindow window = new MainWindow();
+
+        window.setBounds(400, 400, 900, 200);
+        window.setVisible(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     private void generate() throws IOException {
@@ -196,19 +200,6 @@ public class MainWindow extends JFrame {
 
         JOptionPane.showMessageDialog(new JFrame(), "Complete. Check sc_out folder", "Dialog",
                 JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    public static void main(String[] args) throws IOException {
-
-        System.setProperty("awt.useSystemAAFontSettings", "on");
-        System.setProperty("swing.aatext", "true");
-
-        MainWindow window = new MainWindow();
-
-        window.setBounds(400, 400, 900, 200);
-        window.setVisible(true);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
 }

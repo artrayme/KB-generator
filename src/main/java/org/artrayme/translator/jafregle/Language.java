@@ -1,7 +1,6 @@
 package org.artrayme.translator.jafregle;
 
-public enum Language
-{
+public enum Language {
     AFRIKAANS("af"),
     ALBANIAN("sq"),
     AMHARIC("am"),
@@ -93,8 +92,12 @@ public enum Language
     VIETNAMESE("vi"),
     WELSH("cy"),
     YIDDISH("yi");
-    
+
     String value;
+
+    Language(String value) {
+        this.value = value;
+    }
 
     public static Language fromString(final String pLanguage) {
         for (Language l : values()) {
@@ -105,11 +108,7 @@ public enum Language
         throw new RuntimeException("Can't find language " + pLanguage);
     }
 
-    Language(String value) {
-        this.value = value;
-    }
-    
-    public String value(){
+    public String value() {
         return this.value;
     }
 }
