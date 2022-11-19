@@ -26,14 +26,14 @@ $endif$
 
 $if(firstDomains)$
 $firstDomains:{conc|
-<= nrel_first_domain:
+=> nrel_first_domain:
     $conc.property$;
 }; separator="\n"$
 $endif$
 
 $if(secondDomains)$
 $secondDomains:{conc|
-<= nrel_second_domain:
+=> nrel_second_domain:
     $conc.property$;
 }; separator="\n"$
 $endif$

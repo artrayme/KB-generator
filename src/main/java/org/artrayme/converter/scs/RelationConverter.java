@@ -36,7 +36,9 @@ public class RelationConverter implements WikiDataContainerToScsConverter {
         Map<String, String> result = new HashMap<>();
         var data = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, e->e));
         container.getPropertiesWikiToOstisMap().forEach((key, value) -> {
-            result.put(value, convertSingle(key, value, data));
+            if (data.containsKey(key)) {
+                result.put(value, convertSingle(key, value, data));
+            }
         });
 
         return result;

@@ -23,7 +23,7 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
         this.container = container;
         URL file = ConceptConverter.class.getResource("/ScsTemplates/concept.st");
         if (file != null) {
-             stTemplate = Files.readString(Path.of(file.getFile()));
+            stTemplate = Files.readString(Path.of(file.getFile()));
             parser = new ST(stTemplate, '$', '$');
         } else {
             throw new IOException("File with template not found");
@@ -33,16 +33,18 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
     @Override
     public Map<String, String> convert() {
         Map<String, String> result = new HashMap<>();
-        var data = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, e->e));
+        var data = container.getAllData().stream().collect(Collectors.toMap(WikiEntity::wikiId, e -> e));
         container.getConceptsWikiToOstisMap().forEach((key, value) -> {
-            result.put(value, convertSingle(key, value, data));
+            if (data.containsKey(key)) {
+                result.put(value, convertSingle(key, value, data));
+            }
         });
 
         return result;
     }
 
-    private String convertSingle(String key, String value, Map<String, WikiEntity> data){
-//        I don't know how to reset state for StringTemplate
+    private String convertSingle(String key, String value, Map<String, WikiEntity> data) {
+        //        I don't know how to reset state for StringTemplate
         parser = new ST(stTemplate, '$', '$');
         parser.add("idtf", value);
 
@@ -57,7 +59,7 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
             }
         });
 
-        container.getTriplets().stream().filter(e -> e.node1().equals(key)).forEach(e -> {
+        container.getTriplets().stream().filter(e -> e.node1().equals(key) && !(e.property().equals("P279") || e.property().equals("P31"))).forEach(e -> {
             if (container.getPropertiesWikiToOstisMap().containsKey(e.property()) && container.getConceptsWikiToOstisMap().containsKey(e.node2()))
                 parser.addAggr("relations.{text, conc}", List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
                         container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
@@ -65,6 +67,10 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
 
         data.get(key).descriptions().forEach((lang, label) -> {
             parser.addAggr("examples.{text, lang}", List.of(label, "lang_" + lang).toArray());
+        });
+
+        container.getTriplets().stream().filter(e -> (e.property().equals("P279") || e.property().equals("P31")) && e.node1().equals(key)).forEach(e -> {
+            parser.addAggr("superclass.{idtf}", List.of(container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
         });
 
         return parser.render();
