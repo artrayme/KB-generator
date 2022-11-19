@@ -11,9 +11,6 @@ public final class WikiEntity {
     public WikiEntity(String wikiId,
                       Map<String, String> labels,
                       Map<String, String> descriptions) {
-        if (labels.isEmpty())
-            throw new RuntimeException("There is entity without labels -- " + wikiId + ". " +
-                    "You can add labels for this entity in Wikidata, or you can change input keywords");
         this.labels = labels;
         this.wikiId = wikiId;
         this.descriptions = descriptions;
