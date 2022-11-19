@@ -28,6 +28,10 @@ public class WikiFillMappingInfo implements WikiProcessorPipeline {
 
     public String toOstisIdtf(String label, String prefix) {
         return prefix + label.replace(' ', '_')
+                .replace("-", "_")
+                .replace("+", "_")
+                .replace(".", "_")
+                .replace(",", "_")
                 .replace("(", "")
                 .replace(")", "");
     }
