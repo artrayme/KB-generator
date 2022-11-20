@@ -61,7 +61,7 @@ public class WikiBatchEntityCollector implements WikiProcessorPipeline {
             recPullConnectedData(document.getEntityId(), recursionDepth);
         }
 
-        return new WikiDataContainer(List.of(), conceptsMap, propertiesMap, instancesMap, triplets);
+        return new WikiDataContainer(List.of(), conceptsMap, propertiesMap, instancesMap, Map.of(), triplets);
     }
 
     private void recPullConnectedData(String documentID, int recursionDepth) {
@@ -86,20 +86,11 @@ public class WikiBatchEntityCollector implements WikiProcessorPipeline {
 
         conceptsMap.put(documentID, null);
         connectedElements.forEach((k, v) -> {
+            propertiesMap.put(k, null);
             for (String s : v) {
                 triplets.add(new WikiTriplet(documentID, k, s));
-                //                if (k.equals("P31")) {
-                //                    instancesMap.put(documentID, null);
-                //                    conceptsMap.put(s, null);
-                //                }
-                //                else
-                if (k.equals("P5869")) {
-                    instancesMap.put(s, null);
-                } else {
-                    conceptsMap.put(s, null);
-                }
+                conceptsMap.put(s, null);
             }
-            propertiesMap.put(k, null);
         });
 
         connectedElements.values().stream().flatMap(Collection::stream).distinct().forEach(e -> {

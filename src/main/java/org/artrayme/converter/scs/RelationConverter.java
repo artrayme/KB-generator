@@ -61,20 +61,40 @@ public class RelationConverter implements WikiDataContainerToScsConverter {
         });
 
         var domains = container.getTriplets().stream().filter(e -> e.property().equals(key)).toList();
-        var bigMapper = new HashMap<String, String>();
-        bigMapper.putAll(container.getConceptsWikiToOstisMap());
-        bigMapper.putAll(container.getInstancesWikiToOstisMap());
-        bigMapper.putAll(container.getPropertiesWikiToOstisMap());
         domains.stream().map(WikiTriplet::node1).distinct().forEach(e -> {
-            if (bigMapper.containsKey(e)) {
-                String property = bigMapper.get(e);
-                parser.addAggr("firstDomains.{property}", List.of(property).toArray());
-            }
+                if (container.getConceptsWikiToOstisMap().containsKey(e)){
+                    parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
+                } else{
+                    container.getClassInstancesMap()
+                            .entrySet()
+                            .stream()
+                            .filter(s->s.getValue().contains(e))
+                            .map(Map.Entry::getKey)
+                            .forEach(s->{
+                                parser.addAggr("firstDomains.{property}",
+                                        List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
+                            });
+//                    container.getClassInstancesMap().get(e).forEach(s->{
+//                        parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
+//                    });
+                }
         });
         domains.stream().map(WikiTriplet::node2).distinct().forEach(e -> {
-            if (bigMapper.containsKey(e)) {
-                String property = bigMapper.get(e);
-                parser.addAggr("secondDomains.{property}", List.of(property).toArray());
+            if (container.getConceptsWikiToOstisMap().containsKey(e)){
+                parser.addAggr("secondDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
+            } else{
+                container.getClassInstancesMap()
+                        .entrySet()
+                        .stream()
+                        .filter(s->s.getValue().contains(e))
+                        .map(Map.Entry::getKey)
+                        .forEach(s->{
+                            parser.addAggr("secondDomains.{property}",
+                                    List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
+                        });
+//                container.getClassInstancesMap().get(e).forEach(s->{
+//                    parser.addAggr("secondDomains.{property}", List.of(container.getClassInstancesMap().get(s)).toArray());
+//                });
             }
         });
 

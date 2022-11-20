@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ConceptConverter implements WikiDataContainerToScsConverter {
@@ -19,7 +20,9 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
     private final String stTemplate;
     private ST parser;
 
-    public ConceptConverter(WikiDataContainer container) throws IOException {
+    private final Set<String> propertyMeansSubclass;
+
+    public ConceptConverter(WikiDataContainer container, Set<String> propertyMeansSubclass) throws IOException {
         this.container = container;
         URL file = ConceptConverter.class.getResource("/ScsTemplates/concept.st");
         if (file != null) {
@@ -28,6 +31,8 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
         } else {
             throw new IOException("File with template not found");
         }
+
+        this.propertyMeansSubclass = propertyMeansSubclass;
     }
 
     @Override
@@ -59,19 +64,36 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
             }
         });
 
-        container.getTriplets().stream().filter(e -> e.node1().equals(key) && !(e.property().equals("P279") || e.property().equals("P31"))).forEach(e -> {
-            if (container.getPropertiesWikiToOstisMap().containsKey(e.property()) && container.getConceptsWikiToOstisMap().containsKey(e.node2()))
-                parser.addAggr("relations.{text, conc}", List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
-                        container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
-        });
+        container.getTriplets().stream()
+                .filter(e -> e.node1().equals(key) && !propertyMeansSubclass.contains(e.property()))
+                .forEach(e -> {
+                    if (container.getConceptsWikiToOstisMap().containsKey(e.node2())) {
+                        parser.addAggr("relations.{text, conc}",
+                                List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
+                                        container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
+                    } else{
+                        container.getClassInstancesMap()
+                                .entrySet()
+                                .stream()
+                                .filter(s->s.getValue().contains(e.node2()))
+                                .map(Map.Entry::getKey)
+                                .forEach(s->{
+                                    parser.addAggr("relations.{text, conc}",
+                                            List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
+                                                    container.getConceptsWikiToOstisMap().get(s)).toArray());
+                                });
+                    }
+                });
 
         data.get(key).descriptions().forEach((lang, label) -> {
             parser.addAggr("examples.{text, lang}", List.of(label, "lang_" + lang).toArray());
         });
 
-        container.getTriplets().stream().filter(e -> (e.property().equals("P279") || e.property().equals("P31")) && e.node1().equals(key)).forEach(e -> {
-            parser.addAggr("superclass.{idtf}", List.of(container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
-        });
+        container.getTriplets().stream()
+                .filter(e -> propertyMeansSubclass.contains(e.property()) && e.node1().equals(key))
+                .forEach(e -> {
+                    parser.addAggr("superclass.{idtf}", List.of(container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
+                });
 
         return parser.render();
     }

@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class InstanceConverter implements WikiDataContainerToScsConverter {
@@ -19,8 +20,11 @@ public class InstanceConverter implements WikiDataContainerToScsConverter {
     private final String stTemplate;
     private ST parser;
 
-    public InstanceConverter(WikiDataContainer container) throws IOException {
+    private final Set<String> relationsInstanceHasClass;
+
+    public InstanceConverter(WikiDataContainer container, Set<String> relationsInstanceHasClass) throws IOException {
         this.container = container;
+        this.relationsInstanceHasClass = relationsInstanceHasClass;
         URL file = InstanceConverter.class.getResource("/ScsTemplates/instance.st");
         if (file != null) {
             stTemplate = Files.readString(Path.of(file.getFile()));
@@ -63,7 +67,21 @@ public class InstanceConverter implements WikiDataContainerToScsConverter {
             parser.addAggr("examples.{text, lang}", List.of(label, "lang_" + lang).toArray());
         });
 
-        parser.add("class", container.getConceptsWikiToOstisMap().get(container.getTriplets().stream().filter(e -> e.node2().equals(key)).findFirst().get().node1()));
+        var conceptAndInstanceMapper = new HashMap<>(container.getConceptsWikiToOstisMap());
+        conceptAndInstanceMapper.putAll(container.getInstancesWikiToOstisMap());
+        container.getTriplets().stream()
+                .filter(e -> e.node1().equals(key) && !relationsInstanceHasClass.contains(e.property()))
+                .forEach(e -> {
+                    parser.addAggr("relations.{text, conc}",
+                            List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
+                                    conceptAndInstanceMapper.get(e.node2())).toArray());
+                });
+
+        container.getTriplets().stream()
+                .filter(e -> relationsInstanceHasClass.contains(e.property()) && e.node1().equals(key))
+                .forEach(e -> {
+                    parser.addAggr("superclass.{idtf}", List.of(container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
+                });
 
         return parser.render();
     }

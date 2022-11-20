@@ -37,7 +37,9 @@ public class WikiEntityDataCollector implements WikiProcessorPipeline {
                 container.getConceptsWikiToOstisMap(),
                 container.getPropertiesWikiToOstisMap(),
                 container.getInstancesWikiToOstisMap(),
-                container.getTriplets());
+                container.getClassInstancesMap(),
+                container.getTriplets()
+        );
     }
 
     private Map<String, WikiEntity> pullDataForIds(List<String> wikiIds) {

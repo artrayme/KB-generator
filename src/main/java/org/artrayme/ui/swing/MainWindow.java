@@ -7,6 +7,7 @@ import org.artrayme.pipeline.WikiBatchEntityCollector;
 import org.artrayme.pipeline.WikiClearIllegalCharacters;
 import org.artrayme.pipeline.WikiDeleteEntitiesWithoutLabels;
 import org.artrayme.pipeline.WikiEntityDataCollector;
+import org.artrayme.pipeline.WikiExtractInstancesFromConcepts;
 import org.artrayme.pipeline.WikiFillMappingInfo;
 import org.artrayme.pipeline.WikiOstisRelNameMapper;
 import org.artrayme.pipeline.WikiProcessorPipeline;
@@ -110,11 +111,16 @@ public class MainWindow extends JFrame {
                 "P1709",  // equivalent_class
                 "P495",   // country_of_origin
                 "P425",   // field_of_this_occupation
-                "P5869",   // model_item
-                "P279"   // subclass_of
+                "P5869",  // model_item
+                "P279",   // subclass_of
+                "P101",   // field_of_work
+                "P1855",   // Wiki_property_example
+                "P106"    // occupation
         );
+        Set<String> relationsInstanceOf = Set.of("P31", "P106", "P1855");
+        Set<String> relationsHasInstance = Set.of("P5869");
+        Set<String> relationsSubclassOf = Set.of("P279");
 
-        //        var requiredLangs = Set.of("en", "ru", "de", "fr", "uk");
         var requiredLangs = Arrays.stream(this.requiredLangs.getText().split(","))
                 .map(String::trim)
                 .collect(Collectors.toSet());
@@ -126,9 +132,8 @@ public class MainWindow extends JFrame {
 
         WikibaseDataFetcher wikidataDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
         WikiProcessorPipeline wikiParser = new WikiBatchEntityCollector(
-                //                Map.of("human", "en"),
                 requiredEntities,
-                1,
+                2,
                 1,
                 allowableProperties,
                 requiredLangs,
@@ -144,7 +149,11 @@ public class MainWindow extends JFrame {
                                                         new WikiRemoveEntitiesWithRelations(
                                                                 new WikiDeleteEntitiesWithoutLabels(
                                                                         new WikiEntityDataCollector(
-                                                                                wikiParser,
+                                                                                new WikiExtractInstancesFromConcepts(
+                                                                                        wikiParser,
+                                                                                        relationsInstanceOf,
+                                                                                        relationsHasInstance,
+                                                                                        relationsSubclassOf),
                                                                                 wikidataDataFetcher
                                                                         )
                                                                 ),
@@ -160,10 +169,10 @@ public class MainWindow extends JFrame {
                                 "P1552", "nrel_inclusion")
                 )
         );
-        var x = pipeline.execute();
-        var conceptScs = new ConceptConverter(x).convert();
-        var instancesScs = new InstanceConverter(x).convert();
-        var relationsScs = new RelationConverter(x).convert();
+        var dataContainer = pipeline.execute();
+        var conceptScs = new ConceptConverter(dataContainer, relationsSubclassOf).convert();
+        var instancesScs = new InstanceConverter(dataContainer, relationsInstanceOf).convert();
+        var relationsScs = new RelationConverter(dataContainer).convert();
 
         Path outDir = Path.of("sc_out");
         Path concOutDir = Path.of("sc_out/concepts");

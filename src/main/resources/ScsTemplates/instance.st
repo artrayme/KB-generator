@@ -22,5 +22,12 @@ $if(definitions)$
 *);
 $endif$
 
-<-$class$;
+$if(relations)$
+$relations:{rel| => $rel.text$: $rel.conc$}; separator=";\n"$;
+$endif$
+
+$if(superclass)$
+$superclass:{class| <- $class.idtf$}; separator=";\n"$;
+$endif$
+
 <-sc_node_not_relation;;
