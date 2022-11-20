@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="refactor: reformat code">
-      <change afterPath="$PROJECT_DIR$/.run/KB-generator.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiDeleteEntitiesWithoutLabels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiExtractInstancesFromConcepts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/ConceptConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/InstanceConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/model/WikiDataContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiBatchEntityCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiEntityDataCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiEntityDataCollector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithInvalidOstisIdtf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiRemoveEntitiesWithoutEnglish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ScsTemplates/instance.st" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ScsTemplates/instance.st" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +103,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/artrayme/translator" />
     </key>
   </component>
-  <component name="RunManager">
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.KB-generator" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -135,7 +130,8 @@
       <workItem from="1668265951287" duration="7350000" />
       <workItem from="1668291400618" duration="3699000" />
       <workItem from="1668364644625" duration="80469000" />
-      <workItem from="1668865773533" duration="14166000" />
+      <workItem from="1668865773533" duration="15565000" />
+      <workItem from="1668886012095" duration="21766000" />
     </task>
     <task id="LOCAL-00001" summary="init: just a working prototype">
       <created>1668526577306</created>
@@ -228,7 +224,35 @@
       <option name="project" value="LOCAL" />
       <updated>1668879040623</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactor: delete useless comments">
+      <created>1668884300789</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668884300789</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: remove redundant check">
+      <created>1668884323879</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1668884323879</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: add more fixing rule for illegal symbols in wiki ids">
+      <created>1668884384094</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668884384094</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: new pipeline element that remove entities without labels">
+      <created>1668884434511</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1668884434511</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,9 +308,22 @@
     <MESSAGE value="fix: random delay between requests to google translate" />
     <MESSAGE value="doc: update information in readme" />
     <MESSAGE value="refactor: reformat code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: reformat code" />
+    <MESSAGE value="refactor: delete useless comments" />
+    <MESSAGE value="refactor: remove redundant check" />
+    <MESSAGE value="feat: add more fixing rule for illegal symbols in wiki ids" />
+    <MESSAGE value="feat: new pipeline element that remove entities without labels" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: new pipeline element that remove entities without labels" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/artrayme/converter/scs/RelationConverter.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.json.JSONObject" memberName="map" />
