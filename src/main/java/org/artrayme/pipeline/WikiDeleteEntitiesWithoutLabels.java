@@ -5,7 +5,7 @@ import org.artrayme.model.WikiEntity;
 
 import java.util.stream.Collectors;
 
-public class WikiDeleteEntitiesWithoutLabels implements WikiProcessorPipeline{
+public class WikiDeleteEntitiesWithoutLabels implements WikiProcessorPipeline {
     private final WikiProcessorPipeline wikiProcessorPipeline;
 
     public WikiDeleteEntitiesWithoutLabels(WikiProcessorPipeline wikiProcessorPipeline) {
@@ -16,7 +16,7 @@ public class WikiDeleteEntitiesWithoutLabels implements WikiProcessorPipeline{
     public WikiDataContainer execute() {
         var container = wikiProcessorPipeline.execute();
         var wikiIdsToDelete = container.getAllData().stream()
-                .filter(e->e.labels().isEmpty())
+                .filter(e -> e.labels().isEmpty())
                 .map(WikiEntity::wikiId)
                 .collect(Collectors.toSet());
         container.deleteByWikiIds(wikiIdsToDelete);

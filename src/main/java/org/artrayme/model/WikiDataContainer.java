@@ -1,7 +1,6 @@
 package org.artrayme.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,10 +56,11 @@ public class WikiDataContainer {
         return classInstancesMap;
     }
 
-    public boolean addInstanceForClass(String classWikiId, Set<String> instancesToAdd){
-        if (classInstancesMap.containsKey(classWikiId)){
+    public boolean addInstanceForClass(String classWikiId, Set<String> instancesToAdd) {
+        if (classInstancesMap.containsKey(classWikiId)) {
             return classInstancesMap.get(classWikiId).addAll(instancesToAdd);
-        } else classInstancesMap.put(classWikiId, new HashSet<>(instancesToAdd));
+        } else
+            classInstancesMap.put(classWikiId, new HashSet<>(instancesToAdd));
         return true;
     }
 
@@ -69,7 +69,7 @@ public class WikiDataContainer {
         instancesWikiToOstisMap.keySet().removeIf(wikiIds::contains);
         propertiesWikiToOstisMap.keySet().removeIf(wikiIds::contains);
         classInstancesMap.keySet().removeIf(wikiIds::contains);
-        classInstancesMap.values().forEach(e->e.removeIf(wikiIds::contains));
+        classInstancesMap.values().forEach(e -> e.removeIf(wikiIds::contains));
         classInstancesMap.values().removeIf(Set::isEmpty);
         triplets.removeIf(
                 e -> wikiIds.contains(e.node1())

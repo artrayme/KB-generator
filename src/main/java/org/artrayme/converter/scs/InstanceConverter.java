@@ -18,9 +18,8 @@ import java.util.stream.Collectors;
 public class InstanceConverter implements WikiDataContainerToScsConverter {
     private final WikiDataContainer container;
     private final String stTemplate;
-    private ST parser;
-
     private final Set<String> relationsInstanceHasClass;
+    private ST parser;
 
     public InstanceConverter(WikiDataContainer container, Set<String> relationsInstanceHasClass) throws IOException {
         this.container = container;

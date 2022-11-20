@@ -62,39 +62,39 @@ public class RelationConverter implements WikiDataContainerToScsConverter {
 
         var domains = container.getTriplets().stream().filter(e -> e.property().equals(key)).toList();
         domains.stream().map(WikiTriplet::node1).distinct().forEach(e -> {
-                if (container.getConceptsWikiToOstisMap().containsKey(e)){
-                    parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
-                } else{
-                    container.getClassInstancesMap()
-                            .entrySet()
-                            .stream()
-                            .filter(s->s.getValue().contains(e))
-                            .map(Map.Entry::getKey)
-                            .forEach(s->{
-                                parser.addAggr("firstDomains.{property}",
-                                        List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
-                            });
-//                    container.getClassInstancesMap().get(e).forEach(s->{
-//                        parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
-//                    });
-                }
-        });
-        domains.stream().map(WikiTriplet::node2).distinct().forEach(e -> {
-            if (container.getConceptsWikiToOstisMap().containsKey(e)){
-                parser.addAggr("secondDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
-            } else{
+            if (container.getConceptsWikiToOstisMap().containsKey(e)) {
+                parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
+            } else {
                 container.getClassInstancesMap()
                         .entrySet()
                         .stream()
-                        .filter(s->s.getValue().contains(e))
+                        .filter(s -> s.getValue().contains(e))
                         .map(Map.Entry::getKey)
-                        .forEach(s->{
+                        .forEach(s -> {
+                            parser.addAggr("firstDomains.{property}",
+                                    List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
+                        });
+                //                    container.getClassInstancesMap().get(e).forEach(s->{
+                //                        parser.addAggr("firstDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
+                //                    });
+            }
+        });
+        domains.stream().map(WikiTriplet::node2).distinct().forEach(e -> {
+            if (container.getConceptsWikiToOstisMap().containsKey(e)) {
+                parser.addAggr("secondDomains.{property}", List.of(container.getConceptsWikiToOstisMap().get(e)).toArray());
+            } else {
+                container.getClassInstancesMap()
+                        .entrySet()
+                        .stream()
+                        .filter(s -> s.getValue().contains(e))
+                        .map(Map.Entry::getKey)
+                        .forEach(s -> {
                             parser.addAggr("secondDomains.{property}",
                                     List.of(container.getConceptsWikiToOstisMap().get(s)).toArray());
                         });
-//                container.getClassInstancesMap().get(e).forEach(s->{
-//                    parser.addAggr("secondDomains.{property}", List.of(container.getClassInstancesMap().get(s)).toArray());
-//                });
+                //                container.getClassInstancesMap().get(e).forEach(s->{
+                //                    parser.addAggr("secondDomains.{property}", List.of(container.getClassInstancesMap().get(s)).toArray());
+                //                });
             }
         });
 

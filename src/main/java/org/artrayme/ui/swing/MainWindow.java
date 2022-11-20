@@ -43,7 +43,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class MainWindow extends JFrame {
-    private final JTextField entityNames = new JTextField("human, planet");
+    private final JTextField entityNames = new JTextField("human, planet, economy, economist, Q9381");
     private final JTextField requiredLangs = new JTextField("ru, en, de, fr, uk");
     private final JButton generateButton = new JButton("Generate");
     private final JPanel mainPanel = new JPanel(new BorderLayout());
@@ -133,7 +133,7 @@ public class MainWindow extends JFrame {
         WikibaseDataFetcher wikidataDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
         WikiProcessorPipeline wikiParser = new WikiBatchEntityCollector(
                 requiredEntities,
-                2,
+                1,
                 1,
                 allowableProperties,
                 requiredLangs,

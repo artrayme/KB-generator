@@ -18,9 +18,8 @@ import java.util.stream.Collectors;
 public class ConceptConverter implements WikiDataContainerToScsConverter {
     private final WikiDataContainer container;
     private final String stTemplate;
-    private ST parser;
-
     private final Set<String> propertyMeansSubclass;
+    private ST parser;
 
     public ConceptConverter(WikiDataContainer container, Set<String> propertyMeansSubclass) throws IOException {
         this.container = container;
@@ -71,13 +70,13 @@ public class ConceptConverter implements WikiDataContainerToScsConverter {
                         parser.addAggr("relations.{text, conc}",
                                 List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
                                         container.getConceptsWikiToOstisMap().get(e.node2())).toArray());
-                    } else{
+                    } else {
                         container.getClassInstancesMap()
                                 .entrySet()
                                 .stream()
-                                .filter(s->s.getValue().contains(e.node2()))
+                                .filter(s -> s.getValue().contains(e.node2()))
                                 .map(Map.Entry::getKey)
-                                .forEach(s->{
+                                .forEach(s -> {
                                     parser.addAggr("relations.{text, conc}",
                                             List.of(container.getPropertiesWikiToOstisMap().get(e.property()),
                                                     container.getConceptsWikiToOstisMap().get(s)).toArray());

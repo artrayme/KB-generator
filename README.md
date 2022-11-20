@@ -14,7 +14,8 @@ After that, enter some names of your entities and enter the languages for which 
 
 # Example
 Example of generated knowledge base:
-![KB example](kb_example.png)
+
+![KB example](KB_example.png)
 
 # In development 
 
