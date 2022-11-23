@@ -34,6 +34,7 @@ public class WikiFillMappingInfo implements WikiProcessorPipeline {
                 .replace(",", "_")
                 .replace("&", "_")
                 .replace("|", "_")
+                .replace("@", "")
                 .replace("__", "_") //needs improvement
                 .replace("___", "_") //needs improvement
                 .replace("\"", "")

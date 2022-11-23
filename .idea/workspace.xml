@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="refactor:">
-      <change afterPath="$PROJECT_DIR$/KB_example.png" afterDir="false" />
+    <list default="true" id="5629a42f-39b8-4d1c-ae9a-4706b4e40a77" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kb_example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiClearIllegalCharacters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/pipeline/WikiFillMappingInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/artrayme/ui/swing/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +124,8 @@
       <workItem from="1668291400618" duration="3699000" />
       <workItem from="1668364644625" duration="80469000" />
       <workItem from="1668865773533" duration="15565000" />
-      <workItem from="1668886012095" duration="22425000" />
+      <workItem from="1668886012095" duration="23931000" />
+      <workItem from="1669219817956" duration="3230000" />
     </task>
     <task id="LOCAL-00001" summary="init: just a working prototype">
       <created>1668526577306</created>
@@ -260,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668951018961</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor: update readme and code cleanup">
+      <created>1668951532510</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1668951532510</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +329,8 @@
     <MESSAGE value="feat: new pipeline element that remove entities without labels" />
     <MESSAGE value="feat: new patterns for converting labels to ostis idtfs" />
     <MESSAGE value="feat: major changes in instances mechanism: add new field into data container, extract logic into separated layer, change converters according to new data representation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: major changes in instances mechanism: add new field into data container, extract logic into separated layer, change converters according to new data representation" />
+    <MESSAGE value="refactor: update readme and code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: update readme and code cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

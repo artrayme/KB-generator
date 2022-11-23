@@ -22,6 +22,7 @@ public class WikiClearIllegalCharacters implements WikiProcessorPipeline {
 
     private String removeIllegalCharacters(String text) {
         return text.replace("[", "")
-                .replace("]", "");
+                .replace("]", "")
+                .replace("\\", "");
     }
 }
